@@ -127,7 +127,7 @@ var result = floodFill({
   }
 });
 
-result.boundaries; // [[2], [6]]
+result.boundaries; // [[6], [2]]
 ```
 
 ## Diagonals

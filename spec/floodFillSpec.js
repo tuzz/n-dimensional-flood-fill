@@ -105,10 +105,10 @@ test("it works for the 'Boundaries' example in the readme", function () {
     }
   });
 
-  var expectation = [[2], [6]];
+  var expectation = [[6], [2]];
   deepEqual(result.boundaries, expectation);
 
-  var expectation = [2, 6];
+  var expectation = [6, 2];
   deepEqual(capturedBoundaries, expectation);
 });
 
