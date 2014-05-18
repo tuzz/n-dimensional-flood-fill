@@ -71,18 +71,17 @@ test("it works for the 'n-dimensions' example in the readme", function () {
 
 test("it works for the 'Equivalence' example in the readme", function () {
   var data = [
-    ["cat", "bat", "zoo"],
-    ["foo", "hat", "bar"],
-    ["baz", "rat", "qux"]
+    ["foo", "bar"],
+    ["qux", "baz"]
   ];
 
   var getter = function (x, y) {
     return data[y][x];
   };
 
-  // Flood cells that contain the string 'at'.
-  var equals = function (node) {
-    return node.match(/at/) !== null;
+  // Flood cells start with the same letter.
+  var equals = function (a, b) {
+    return a[0] === b[0];
   };
 
   var result = floodFill({
@@ -91,8 +90,7 @@ test("it works for the 'Equivalence' example in the readme", function () {
     equals: equals
   });
 
-  var expectation = [[1, 1], [1, 0], [1, 2], [0, 0]];
-  deepEqual(result.flooded, expectation);
+  deepEqual(result.flooded, [[1, 1], [1, 0]]);
 });
 
 test("it works for the 'Boundaries' example in the readme", function () {

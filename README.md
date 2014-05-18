@@ -92,14 +92,13 @@ If you're equivalence relation is more complicated, you can set it with the 'equ
 
 ```javascript
 var data = [
-  ["cat", "bat", "zoo"],
-  ["foo", "hat", "bar"],
-  ["baz", "rat", "qux"]
+  ["foo", "bar"],
+  ["qux", "baz"]
 ];
 
-// Flood cells that contain the string 'at'.
-var equals = function (node) {
-  return node.match(/at/) !== null;
+// Flood cells start with the same letter.
+var equals = function (a, b) {
+  return a[0] === b[0];
 };
 
 var result = floodFill({
@@ -107,6 +106,8 @@ var result = floodFill({
   seed: [1, 1],
   equals: equals
 });
+
+result.flooded; // [[1, 1], [1, 0]]
 ```
 
 ## Boundaries
