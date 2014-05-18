@@ -1,0 +1,3 @@
+[submodule "examples/vendor/rawImage.js"]
+	path = examples/vendor/rawImage.js
+	url = https://github.com/tuzz/rawImage.js

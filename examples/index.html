@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="../lib/floodFill.js"></script>
+    <script src="vendor/rawImage.js/lib/rawImage.js"></script>
+  </head>
+
+  <body>
+    <h1>Click on the flag</h1>
+
+    <p>To run this example, run python -m SimpleHTTPServer from the root of the
+    project, then visit localhost:8000/examples</p>
+
+    <canvas id="canvas"></canvas>
+
+    <script>
+      var image = new RawImage("France.svg");
+      var canvas = document.getElementById("canvas");
+
+      image.onload = function () {
+        image.render(canvas);
+      };
+
+      canvas.addEventListener("click", function (event) {
+        var equals = function (c1, c2) {
+          return (c1.red === c2.red) &&
+                 (c1.green === c2.green) &&
+                 (c1.blue === c2.blue);
+        }
+
+        var result = floodFill({
+          getter: image.get,
+          seed: [event.x, event.y],
+          equals: equals
+        });
+
+        var yellow = { red: 255, green: 255, blue: 0, alpha: 255 };
+        var black =  { red: 0,   green: 0,   blue: 0, alpha: 255 };
+
+
+        for (var i = 0; i < result.flooded.length; i++) {
+          var coords = result.flooded[i];
+
+          var x = coords[0];
+          var y = coords[1];
+
+          image.set(x, y, yellow);
+        }
+
+        for (var i = 0; i < result.boundaries.length; i++) {
+          var coords = result.boundaries[i];
+
+          var x = coords[0];
+          var y = coords[1];
+
+          image.set(x, y, black);
+        }
+
+        image.render(canvas);
+      });
+    </script>
+  </body>
+</html>
