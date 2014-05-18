@@ -1,7 +1,3 @@
-# NOT IMPLEMENTED YET
-# NOT IMPLEMENTED YET
-# NOT IMPLEMENTED YET
-
 ## floodFill.js
 
 A non-recursive, n-dimensional implementation of flood fill.
