@@ -21,7 +21,7 @@ test("it works for the 'Usage' example in the readme", function () {
   });
 
   // Get the flooded nodes from the result.
-  var expectation = [[1, 1], [2, 1], [2, 0], [1, 2], [0, 2]];
+  var expectation = [[1, 1], [1, 2], [0, 2], [2, 1], [2, 0]]
   deepEqual(result.flooded, expectation);
 });
 
