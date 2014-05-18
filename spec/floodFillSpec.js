@@ -21,7 +21,7 @@ test("it works for the 'Usage' example in the readme", function () {
   });
 
   // Get the flooded nodes from the result.
-  var expectation = [[1, 1], [1, 2], [0, 2], [2, 1], [2, 0]]
+  var expectation = [[1, 1], [2, 1], [2, 0], [1, 2], [0, 2]]
   deepEqual(result.flooded, expectation);
 });
 
@@ -114,8 +114,8 @@ test("it works for the 'Boundaries' example in the readme", function () {
 
 test("it works for the 'Diagonals' example in the readme", function () {
   var data = [
-    [1, 0, 0]
-    [0, 1, 1]
+    [1, 0, 0],
+    [0, 1, 1],
     [0, 1, 1]
   ];
 
@@ -131,6 +131,6 @@ test("it works for the 'Diagonals' example in the readme", function () {
     diagonals: true
   });
 
-  var expectation = [[1, 1], [2, 1], [2, 2], [1, 2], [0, 0]];
+  var expectation = [[1, 1], [2, 2], [2, 1], [1, 2], [0, 0]];
   deepEqual(result.flooded, expectation);
 });

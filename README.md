@@ -84,7 +84,7 @@ var result = floodFill({
 result.flooded; // [[3], [2]];
 ```
 
-The number of dimensions will be inferred from your getter.
+The number of dimensions will be inferred from your seed.
 
 ## Equivalence
 
