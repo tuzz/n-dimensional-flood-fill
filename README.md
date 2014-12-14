@@ -1,10 +1,25 @@
-## floodFill.js
+## n-dimensional-flood-fill
 
 A non-recursive, n-dimensional implementation of flood fill.
 
+## Setup
+
+Install the package.
+
+```
+npm install n-dimensional-flood-fill --save
+```
+
+Require the module.
+
+```javascript
+var floodFill = require("n-dimensional-flood-fill");
+```
+
 ## Usage
 
-Let's say we'd like to call the flood fill algorithm on a two-dimensional data structure.
+Let's say we'd like to call the flood fill algorithm on a two-dimensional data
+structure.
 
 ```javascript
 // Some data structure that we'd like to flood fill.
@@ -42,7 +57,8 @@ Flooded nodes are returned as a nested array of arguments:
 
 You can call a function when a node is flooded with the 'onFlood' option.
 
-It is important that you do not modifying the data structure that floodFill is iterating over. Instead, make a copy first:
+It is important that you do not modifying the data structure that floodFill is
+iterating over. Instead, make a copy first:
 
 ```javascript
 var copy = data.slice(0);
@@ -84,7 +100,8 @@ The number of dimensions will be inferred from your seed.
 
 ## Equivalence
 
-If you're equivalence relation is more complicated, you can set it with the 'equals' option.
+If you're equivalence relation is more complicated, you can set it with the
+'equals' option.
 
 ```javascript
 var data = [
@@ -108,7 +125,8 @@ result.flooded; // [[1, 1], [1, 0]]
 
 ## Boundaries
 
-You can capture or call a function when a boundary between a flooded and non-flooded cell is reached.
+You can capture or call a function when a boundary between a flooded and
+non-flooded cell is reached.
 
 This includes cells at the edges of your data structure.
 
@@ -130,7 +148,8 @@ result.boundaries; // [[6], [2]]
 
 By default, floodFill will not visit diagonal nodes.
 
-If you started in the middle of the following data structure, the top-left node would not be included.
+If you started in the middle of the following data structure, the top-left node
+would not be included.
 
 ```
 1 0 0

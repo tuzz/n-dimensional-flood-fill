@@ -1,18 +1,22 @@
-test("it can be flooded diagonally", function () {
-  var data = [
-    [1, 0],
-    [0, 1]
-  ];
+"use strict";
 
-  var getter = function (x, y) {
-    return data[y][x];
-  };
+describe("diagonals", function () {
+  it("can be flooded diagonally", function () {
+    var data = [
+      [1, 0],
+      [0, 1]
+    ];
 
-  var result = floodFill({
-    getter: getter,
-    seed: [0, 0],
-    diagonals: true
+    var getter = function (x, y) {
+      return data[y][x];
+    };
+
+    var result = floodFill({
+      getter: getter,
+      seed: [0, 0],
+      diagonals: true
+    });
+
+    expect(result.flooded).toEqual([[0, 0], [1, 1]]);
   });
-
-  deepEqual(result.flooded, [[0, 0], [1, 1]]);
 });
