@@ -100,7 +100,7 @@ The number of dimensions will be inferred from your seed.
 
 ## Equivalence
 
-If you're equivalence relation is more complicated, you can set it with the
+If your equivalence relation is more complicated, you can set it with the
 'equals' option.
 
 ```javascript
