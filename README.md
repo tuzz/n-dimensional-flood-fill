@@ -168,9 +168,3 @@ floodFill({
 ```
 
 This will work for any number of dimensions.
-
-## Contribution
-
-Please send a pull request or open an issue.
-
-You should follow me on [twitter](https://twitter.com/cpatuzzo).
